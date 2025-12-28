@@ -1,8 +1,10 @@
 package com.foodcoloring;
 
 import java.awt.AlphaComposite;
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.net.URL;
@@ -15,7 +17,9 @@ import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.gameval.ItemID;
 import net.runelite.api.gameval.InterfaceID;
 import net.runelite.api.widgets.WidgetItem;
+import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.overlay.WidgetItemOverlay;
+import net.runelite.client.ui.overlay.components.TextComponent;
 
 @Slf4j
 public class FoodColoringOverlay extends WidgetItemOverlay
@@ -75,7 +79,7 @@ public class FoodColoringOverlay extends WidgetItemOverlay
 		if (shouldRenderItemOverlay(config.recolorGiantKrill(), id, ItemID.GIANT_KRILL) ||
 				shouldRenderItemOverlay(config.recolorHaddock(), id, ItemID.HADDOCK) ||
 				shouldRenderItemOverlay(config.recolorYellowfin(), id, ItemID.YELLOWFIN) ||
-				shouldRenderItemOverlay(config.recolorHalibut(), id, ItemID.HALIBUT) ||
+				shouldRenderItemOverlay(config.recolorHalibut() != HalibutType.NONE, id, ItemID.HALIBUT) ||
 				shouldRenderItemOverlay(config.recolorBluefin(), id, ItemID.BLUEFIN) ||
 				shouldRenderItemOverlay(config.recolorMarlin(), id, ItemID.MARLIN) ||
 				//shouldRenderItemOverlay(config.recolorSwordtipSquid(), id, ItemID.SWORDTIP_SQUID) ||
@@ -120,6 +124,12 @@ public class FoodColoringOverlay extends WidgetItemOverlay
 		)
 		{
 			renderCorrectItemOverlay(graphics, id, widget);
+			final int qty = widget.getQuantity();
+			if (qty > 1)
+			{
+				graphics.setFont(FontManager.getRunescapeSmallFont());
+				renderText(graphics, widget.getCanvasBounds(), qty);
+			}
 		}
 	}
 
@@ -171,10 +181,22 @@ public class FoodColoringOverlay extends WidgetItemOverlay
 		log.debug("Food Coloring plugin could not find image resource for item id: " + id);
 	}
 
+	private void renderText(Graphics2D graphics, Rectangle bounds, int count)
+	{
+		final TextComponent textComponent = new TextComponent();
+		textComponent.setPosition(new Point(bounds.x, bounds.y + 10));
+		textComponent.setColor(Color.YELLOW);
+		textComponent.setText(Integer.toString(count));
+		textComponent.render(graphics);
+	}
 
 	private Image getReplacementIcon(final int id)
 	{
-		final String key = Integer.toString(id);
+		String key = Integer.toString(id);
+		if (config.recolorHalibut() != HalibutType.NONE && id == ItemID.HALIBUT)
+		{
+			key += "_" + config.recolorHalibut().getName();
+		}
 		if (!this.images.containsKey(key))
 		{
 			final URL resourceUrl = FoodColoringPlugin.class.getClassLoader().getResource(key + ".png");

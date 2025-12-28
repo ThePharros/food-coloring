@@ -71,7 +71,7 @@ public interface FoodColoringConfig extends Config
 	{
 		return true;
 	}
-
+/*
 	@ConfigItem(
 			position = 3,
 			keyName = "recolorHalibut",
@@ -83,7 +83,7 @@ public interface FoodColoringConfig extends Config
 	{
 		return true;
 	}
-
+*/
 	@ConfigItem(
 			position = 4,
 			keyName = "recolorBluefin",
@@ -144,103 +144,17 @@ public interface FoodColoringConfig extends Config
 		return true;
 	}*/
 
-/*
 	@ConfigItem(
-		position = 9,
-		keyName = "recolorRawGiantKrill",
-		name = "Raw Giant Krill",
-		description = "Recoloring of raw giant krill.",
-		section = fishSection
-	)
-	default boolean recolorRawGiantKrill()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 10,
-			keyName = "recolorRawHaddock",
-			name = "Raw Haddock",
-			description = "Recoloring of raw haddock.",
+			position = 9,
+			keyName = "recolorHalibut",
+			name = "Halibut",
+			description = "Recoloring of cooked halibut, with multiple choices.",
 			section = fishSection
 	)
-	default boolean recolorRawHaddock()
+	default HalibutType recolorHalibut()
 	{
-		return true;
+		return HalibutType.LIGHT;
 	}
-
-	@ConfigItem(
-			position = 11,
-			keyName = "recolorRawYellowfin",
-			name = "Raw Yellowfin",
-			description = "Recoloring of raw yellowfin.",
-			section = fishSection
-	)
-	default boolean recolorRawYellowfin()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 12,
-			keyName = "recolorRawHalibut",
-			name = "Raw Halibut",
-			description = "Recoloring of raw halibut.",
-			section = fishSection
-	)
-	default boolean recolorRawHalibut()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 13,
-			keyName = "recolorRawBluefin",
-			name = "Raw Bluefin",
-			description = "Recoloring of raw bluefin.",
-			section = fishSection
-	)
-	default boolean recolorRawBluefin()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 14,
-			keyName = "recolorRawMarlin",
-			name = "Raw Marlin",
-			description = "Recoloring of raw marlin.",
-			section = fishSection
-	)
-	default boolean recolorRawMarlin()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 15,
-			keyName = "recolorRawSwordtipSquid",
-			name = "Raw Swordtip Squid",
-			description = "Recoloring of raw swordtip squid.",
-			section = fishSection
-	)
-	default boolean recolorRawSwordtipSquid()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 16,
-			keyName = "recolorRawJumboSquid",
-			name = "Raw Jumbo Squid",
-			description = "Recoloring of raw jumbo squid.",
-			section = fishSection
-	)
-	default boolean recolorRawJumboSquid()
-	{
-		return true;
-	}
- */
 
 	//=== Hunter Meats Section ===
 
@@ -351,116 +265,6 @@ public interface FoodColoringConfig extends Config
 	{
 		return true;
 	}
-
-	/*
-	@ConfigItem(
-			position = 9,
-			keyName = "recolorRawWildKebbit",
-			name = "Raw Wild Kebbit",
-			description = "Recoloring of raw wild kebbit.",
-			section = hunterMeatSection
-	)
-	default boolean recolorRawWildKebbit()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 10,
-			keyName = "recolorRawLarupia",
-			name = "Raw Larupia",
-			description = "Recoloring of raw larupia meat.",
-			section = hunterMeatSection
-	)
-	default boolean recolorRawLarupia()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 11,
-			keyName = "recolorRawBarbed",
-			name = "Raw Barb-Tailed Kebbit",
-			description = "Recoloring of raw barb-tailed kebbit meat.",
-			section = hunterMeatSection
-	)
-	default boolean recolorRawBarbed()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 12,
-			keyName = "recolorRawGraahk",
-			name = "Raw Graahk",
-			description = "Recoloring of raw graahk meat.",
-			section = hunterMeatSection
-	)
-	default boolean recolorRawGraahk()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 13,
-			keyName = "recolorRawKyatt",
-			name = "Raw Kyatt",
-			description = "Recoloring of raw kyatt meat.",
-			section = hunterMeatSection
-	)
-	default boolean recolorRawKyatt()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 14,
-			keyName = "recolorRawPyreFox",
-			name = "Raw Pyre Fox",
-			description = "Recoloring of raw pyre fox meat.",
-			section = hunterMeatSection
-	)
-	default boolean recolorRawPyreFox()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 15,
-			keyName = "recolorRawSunlightAntelope",
-			name = "Raw Sunlight Antelope",
-			description = "Recoloring of raw sunlight antelope meat.",
-			section = hunterMeatSection
-	)
-	default boolean recolorRawSunlightAntelope()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 16,
-			keyName = "recolorRawDashingKebbit",
-			name = "Raw Dashing Kebbit",
-			description = "Recoloring of raw dashing kebbit meat.",
-			section = hunterMeatSection
-	)
-	default boolean recolorRawDashingKebbit()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 17,
-			keyName = "recolorRawMoonlightAntelope",
-			name = "Raw Moonlight Antelope",
-			description = "Recoloring of raw moonlight antelope meat.",
-			section = hunterMeatSection
-	)
-	default boolean recolorRawMoonlightAntelope()
-	{
-		return true;
-	}
-	 */
 
 	//=== Other Section ===
 
