@@ -1,11 +1,12 @@
 # Food Coloring
 A plugin that recolors cooked Sailing and Hunter foods to have a bit more (colorful) soul to them!
 
-I've also added a yellow stripe to the raw and cooked Marlin, and made the cooked Halibut a lighter tint to be more in-line with its combo food predecessor Karambwan and to be less visually confused with Anglerfish.
-
-Note: I left the new squids unaffected for now as I feel both actually do a solid job. I may still add new sprites for them down the road if there is enough demand for it though. 
-
-Each affected food item can be toggled in the config options.
+## Features
+* Recolors all cooked Hunter meats!
+* Recolors all cooked Sailing fish! (except squids)
+* Redesigns Sunlight and Moonlight Moth Mixes!
+* Alternative color options for cooked Halibut!<br> (Light, Brown, Green, and Halibwan)
+* Each individual item can be toggled in the config options!
 
 ## Before and After
 ![beforeafter.png](src%2Fmain%2Fresources%2Fbeforeafter.png)
