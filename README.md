@@ -9,7 +9,7 @@ A plugin that recolors cooked Sailing and Hunter foods to have a bit more (color
 * Each individual item can be toggled in the config options!
 
 ## Before and After
-![beforeafter.png](src%2Fmain%2Fresources%2Fbeforeafter.png)
+![beforeafter.png](img%2Fbeforeafter.png)
 
 ### Known Issues
 
