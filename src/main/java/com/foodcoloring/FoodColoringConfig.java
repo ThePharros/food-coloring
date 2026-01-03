@@ -26,13 +26,13 @@ public interface FoodColoringConfig extends Config
 	)
 	String hunterMeatSection = "Hunter meat";
 
-/*	@ConfigSection(
+	@ConfigSection(
 		name = "Other",
 		description = "Other recolorable item options.",
 		position = 2,
 		closedByDefault = false
 	)
-	String otherSection = "other";*/
+	String otherSection = "other";
 
 	//=== Fish Section ===
 
@@ -267,5 +267,29 @@ public interface FoodColoringConfig extends Config
 	}
 
 	//=== Other Section ===
+
+	@ConfigItem(
+			position = 0,
+			keyName = "recolorSunlightMothMix",
+			name = "Sunlight Moth Mix",
+			description = "Recolors sunlight moth mix to show a sunlight moth.",
+			section = otherSection
+	)
+	default boolean recolorSunlightMothMix()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+			position = 1,
+			keyName = "recolorMoonlightMothMix",
+			name = "Moonlight Moth Mix",
+			description = "Recolors moonlight moth mix to show a moonlight moth.",
+			section = otherSection
+	)
+	default boolean recolorMoonlightMothMix()
+	{
+		return true;
+	}
 
 }
