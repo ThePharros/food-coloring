@@ -158,8 +158,6 @@ public class FoodColoringOverlay extends WidgetItemOverlay
 		if (iconImage != null)
 		{
 			Graphics2D g2d = (Graphics2D) graphics.create();
-			final int w = iconImage.getWidth(null);
-			final int h = iconImage.getHeight(null);
 			g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
 			g2d.drawImage(iconImage, (int) x + ICON_OFFSET, (int) y + ICON_OFFSET, ICON_DIMENSIONS, ICON_DIMENSIONS, null);
 			g2d.dispose();
